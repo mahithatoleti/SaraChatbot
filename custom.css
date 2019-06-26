@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900');
+
+body {
+  font-family: 'Work Sans', sans-serif !important;
+  background-color: #E4EDF8 !important;
+  color: #4a4a4a !important;
+  font-size: 12px !important;
+}
 .sara_image{
   position: absolute;
     bottom: 10px;
