@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Sara Chatbot</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+	<!--Jquery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+	<style>
+		body {
+			background-color: #eee
+		}
+
+		.chat-window {
+			width: 350px;
+			position: fixed;
+			right: 15px;
+			bottom: 5px;
+			z-index: 1031;
+		}
+
+		.panel {
+			border-radius: 10px;
+			border: 1px solid #516272;
+            border-top:0;
+		}
+
+		.panel-heading {
+			background-color: #1C7EEF;
+			border-radius: 10px 10px 0 0;
+			color: #fff;
+			padding: 20px;
+		}
+
+		.bot-image {
+			background-color: #fff;
+			border-radius: 50%;
+			margin-right: 10px;
+			min-width: 60px;
+			min-height: 60px;
+		}
+
+		.header-title {
+			font-size: 16px;
+			margin: 0 !important;
+			margin-bottom: 5px !important;
+            line-height:3.4;
+		}
+
+		.header-text {
+			font-size: 14px;
+			margin-bottom: 0;
+			line-height: 16px;
+		}
+
+		.chat-container {
+			height: 450px;
+			max-height: 450px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			padding: 15px;
+            background:#fff;
+		}
+
+		.bot-icon {
+			background-color: transparent;
+			border-radius: 50%;
+			border: 1px solid #1C7EEF;
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+            margin-top:5px;
+		}
+
+		.bot-msg .msg {
+			border: 1px solid #1C7EEF;
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 12px;
+			color: #1C7EEF;
+			width: 80%;
+			margin-bottom: 10px;
+            word-break: break-word;
+            text-align: justify
+		}
+
+		.user-msg .msg {
+			float: right;
+			background-color: rgba(28, 126, 239, 0.09);
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 12px;
+			width: 80%;
+			margin-bottom: 10px;
+            word-break: break-word;
+            text-align: justify;
+		}
+
+
+		.panel-footer {
+			padding: 15px 20px;
+			border-top: 1px solid #516272;
+		}
+
+		.footer-content i {
+			margin: auto 5px;
+			color: #666;
+			cursor: pointer;
+		}
+
+		.footer-content input {
+			font-size: 15px;
+		}
+
+		input:focus {
+			outline: none !important;
+		}
+
+		/* Scrollbar CSS */
+
+		::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #1C7EEF;
+			border-radius: 10px;
+		}
+        .attachment_icon{
+            width: 25px;
+            height: 25px;
+            color:#000;
+            margin: auto 5px;
+            cursor:pointer;
+                filter: invert(39%);
+        }
+
+        .msg-box{
+            border:none !important;
+            padding-left: 0 !important;
+        }
+		/* Scrollbar CSS ends here */
+	</style>
+</head>
+
+<body>
+
+	<div class="panel panel-default chat-window">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-12 d-flex">
+					<div class="bot-image">
+
+					</div>
+					<div>
+						<h4 class="header-title modal-header-text">Sara</h4>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="chat-container">
+                    <div class="col-12" style="padding:0">
+                            <div class="bot-msg d-flex">
+                                <div class="bot-icon">
+                                </div>
+                                <div class="msg msg-box">
+                                    <p class="mb-0">Ask me anything .I am here to help you.</p>
+                                </div>
+                            </div>
+                        </div>
+				<div class="row">
+					<div class="col-12">
+						<div class="user-msg">
+							<div class="msg">
+								<p class="mb-0">There is a problem with the new mobile I purchased from your shop.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="bot-msg d-flex">
+							<div class="bot-icon">
+							</div>
+							<div class="msg">
+								<p class="mb-0">What sort of problem is it?</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-12">
+					<div class="footer-content d-flex">
+						<input type="text" id="user-text" class="form-control-plaintext"
+							placeholder="Select above or type a message.">
+					<img src="https://chatscreentemplateimages.s3.amazonaws.com/attach.png" class="attachment_icon">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+
+</body>
+<script>
+	$(document).ready(function () {
+		$('#user-text').keydown(function (event) {
+			var keyCode = (event.keyCode ? event.keyCode : event.which);
+			if (keyCode == 13) {
+				chatActions();
+			}
+		});
+	});
+
+	function chatActions() {
+		var message = $('#user-text').val();
+		appendUserMessage(message);
+		getBotResponse(message);
+	}
+
+	function appendUserMessage(message) {
+		var out_going_message = `<div class="row">
+				<div class="col-12">
+					<div class="user-msg">
+						<div class="msg">
+							<p class="mb-0">` + message + `</p>
+						</div>
+					</div>
+				</div>
+			</div>`;
+		$('.chat-container').append(out_going_message);
+		$('#user-text').val('');
+		$('.chat-container').scrollTop(2000);
+	}
+
+	function getBotResponse(message) {
+		// Write ajax call to get bot response here.
+		// Currently giving sample answer
+		var botResponse = "Hello good morning.";
+		// Ajax call for bot response END
+		appendBotResponse(botResponse);
+	}
+
+	function appendBotResponse(botResponse) {
+		var incoming_msg = `<div class="row">
+				<div class="col-12">
+					<div class="bot-msg d-flex">
+						<div class="bot-icon">
+						</div>
+						<div class="msg">
+							<p class="mb-0">` + botResponse + `</p>
+						</div>
+					</div>
+				</div>
+			</div>`;
+
+		$('.chat-container').append(incoming_msg);
+		$('.chat-container').scrollTop(2000);
+	}
+</script>
+
+</html>
