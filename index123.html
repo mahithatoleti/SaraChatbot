@@ -35,29 +35,40 @@
 		.panel {
 			border-radius: 10px;
 			border: 1px solid #516272;
-            border-top:0;
+			border-top: 0;
 		}
 
 		.panel-heading {
 			background-color: #1C7EEF;
 			border-radius: 10px 10px 0 0;
 			color: #fff;
-			padding: 20px;
+			padding: 2px;
 		}
 
 		.bot-image {
 			background-color: #fff;
 			border-radius: 50%;
 			margin-right: 10px;
-			min-width: 60px;
-			min-height: 60px;
+			/* min-width: 60px; */
+			/* min-height: 69px; */
+			/* background-color: transparent; */
+			border-radius: 50%;
+			/* border: 1px solid #1C7EEF; */
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			margin-top: 5px;
+			vertical-align: middle;
+			margin: 13px;
+			margin-right: 9px;
+
 		}
 
 		.header-title {
 			font-size: 16px;
 			margin: 0 !important;
 			margin-bottom: 5px !important;
-            line-height:3.4;
+			line-height: 3.4;
 		}
 
 		.header-text {
@@ -72,7 +83,7 @@
 			overflow-x: hidden;
 			overflow-y: auto;
 			padding: 15px;
-            background:#fff;
+			background: #fff;
 		}
 
 		.bot-icon {
@@ -82,7 +93,7 @@
 			width: 30px;
 			height: 30px;
 			margin-right: 10px;
-            margin-top:5px;
+			margin-top: 5px;
 		}
 
 		.bot-msg .msg {
@@ -93,8 +104,8 @@
 			color: #1C7EEF;
 			width: 80%;
 			margin-bottom: 10px;
-            word-break: break-word;
-            text-align: justify
+			word-break: break-word;
+			text-align: justify
 		}
 
 		.user-msg .msg {
@@ -105,13 +116,14 @@
 			font-size: 12px;
 			width: 80%;
 			margin-bottom: 10px;
-            word-break: break-word;
-            text-align: justify;
+			word-break: break-word;
+			text-align: justify;
+			margin:10px;
 		}
 
 
 		.panel-footer {
-			padding: 15px 20px;
+			padding: 5px 20px;
 			border-top: 1px solid #516272;
 		}
 
@@ -139,19 +151,44 @@
 			background: #1C7EEF;
 			border-radius: 10px;
 		}
-        .attachment_icon{
-            width: 25px;
-            height: 25px;
-            color:#000;
-            margin: auto 5px;
-            cursor:pointer;
-                filter: invert(39%);
-        }
 
-        .msg-box{
-            border:none !important;
-            padding-left: 0 !important;
-        }
+		.attachment_icon {
+			width: 25px;
+			height: 25px;
+			color: #000;
+			margin: auto 5px;
+			cursor: pointer;
+			filter: invert(39%);
+		}
+
+		.msg-box {
+			border: none !important;
+			padding-left: 0 !important;
+		}
+
+		
+
+		.button_effect {
+			margin: 14px;
+			background: #1c7eef;
+			color: #FFF;
+			text-align: center;
+			border: 1px solid #1c7eef;
+			padding: 8px;
+			border-radius: 5px;
+			margin-left: 20px;
+			margin-top: 5px;
+			white-space: nowrap;
+    		width: 85%;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+			font-size:12px;
+		}
+
+		.button_effect:last-child {
+			margin-bottom:3px;
+		}
+
 		/* Scrollbar CSS ends here */
 	</style>
 </head>
@@ -167,52 +204,60 @@
 					</div>
 					<div>
 						<h4 class="header-title modal-header-text">Sara</h4>
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="panel-body">
-			<div class="chat-container">
-                    <div class="col-12" style="padding:0">
-                            <div class="bot-msg d-flex">
-                                <div class="bot-icon">
-                                </div>
-                                <div class="msg msg-box">
-                                    <p class="mb-0">Ask me anything .I am here to help you.</p>
-                                </div>
-                            </div>
-                        </div>
-				<div class="row">
-					<div class="col-12">
-						<div class="user-msg">
-							<div class="msg">
-								<p class="mb-0">There is a problem with the new mobile I purchased from your shop.</p>
-							</div>
+			<div class="chat-container ">
+				<div class="col-12" style="padding:0">
+					<div class="bot-msg d-flex">
+						<div class="bot-icon">
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
 						<div class="bot-msg d-flex">
-							<div class="bot-icon">
-							</div>
+
 							<div class="msg">
-								<p class="mb-0">What sort of problem is it?</p>
+								<p class="mb-0">Hi! Ask us anything.We are ready to help you! </p>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="button_sara col-md-6">
+						<button class="button_effect"><a>SoftWare Issue</a></button>
+
+					</div>
+					<div class="button_sara col-md-6">
+						<button class="button_effect"><a>Hardware Issue</a></button>
+
+
+					</div>
+				</div>
+				<div class="row">
+						<div class="button_sara col-md-6">
+							<button class="button_effect"><a>SoftWare Issue</a></button>
+	
+						</div>
+						<div class="button_sara col-md-6">
+							<button class="button_effect"><a>HardWare Issue</a></button>
+	
+	
+						</div>
+					</div>
+
 			</div>
+
 		</div>
 		<div class="panel-footer">
+
 			<div class="row">
 				<div class="col-12">
 					<div class="footer-content d-flex">
 						<input type="text" id="user-text" class="form-control-plaintext"
 							placeholder="Select above or type a message.">
-					<img src="https://chatscreentemplateimages.s3.amazonaws.com/attach.png" class="attachment_icon">
-					
+						<img src="https://chatscreentemplateimages.s3.amazonaws.com/attach.png" class="attachment_icon">
+
 					</div>
 				</div>
 			</div>
@@ -222,13 +267,13 @@
 	<!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
+		</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-	</script>
+		</script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-	</script>
+		</script>
 
 </body>
 <script>
